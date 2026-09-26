@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjan Residency - Luxury & Comfort</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .luxury-card {
+            background: #ffffff;
+            border: 1px solid #eeeeee;
+            border-radius: 0;
+            padding: 30px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        .luxury-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">RANJAN RESIDENCY</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="rooms.html" class="nav-link">Rooms</a>
+                <a href="vellore-sites.html" class="nav-link">Vellore Sites</a>
+                <a href="amenities.html" class="nav-link">Amenities</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tel:+919786590145" class="btn-maroon-sm md-hidden-header"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section mobile-min-h-0" style="
+        min-height: 100vh; 
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/site/home.jpeg'); 
+        background-size: cover; 
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 0;
+    ">
+        <div class="container" style="animation: fadeIn 1.2s ease-out;">
+            <h2 class="mobile-text-center" style="font-size: 1.1rem; letter-spacing: 5px; color: #fff; margin-bottom: 20px; font-weight: 700; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Discover Luxury At</h2>
+            <h1 class="hero-title mobile-text-center" style="font-size: 5rem; margin-bottom: 30px; font-weight: 700; color: #fff; letter-spacing: 2px; line-height: 1.1; text-shadow: 0 5px 25px rgba(0,0,0,0.4);">Ranjan Residency</h1>
+            <div style="width: 100px; height: 3px; background: var(--brand-maroon); margin: 0 auto 40px;"></div>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;" class="mobile-px-20">
+                <a href="tel:+919791890145" class="btn-maroon" style="padding: 15px 45px; border-radius: 0;">BOOK YOUR STAY</a>
+                <a href="about.html" style="background: rgba(255,255,255,0.9); color: var(--text-main); padding: 15px 45px; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; transition: all 0.3s; border-radius: 0;">OUR STORY</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Bar -->
+    <div style="background: var(--brand-maroon); color: #fff; padding: 15px 0; text-align: center; font-weight: bold; font-family: 'Cinzel', serif; letter-spacing: 1px; position: relative; z-index: 10; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <i class="fas fa-certificate" style="font-size: 1.2rem;"></i>
+            <span style="font-size: 1rem; text-transform: uppercase;">LIMITED TIME OFFER: FREE SUPPLEMENTARY NON-VEG BREAKFAST FOR ALL ROOMS</span>
+            <i class="fas fa-certificate" style="font-size: 1.2rem;"></i>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section" style="position: relative; overflow: hidden; background: #ffffff;">
+        <div class="container">
+            <div class="mobile-column" style="display: flex; flex-wrap: wrap; align-items: center; gap: 60px;">
+                <div style="flex: 1; min-width: 0; width: 100%;">
+                    <h2 style="font-size: 2.8rem; margin-bottom: 25px; line-height: 1.2; font-weight: 600; color: var(--brand-maroon);">Heritage &amp; <br>Hospitality</h2>
+                    <div style="width: 60px; height: 3px; background: var(--brand-maroon); margin-bottom: 30px;"></div>
+                    <p style="margin-bottom: 35px; color: var(--text-main); font-size: 1.1rem; line-height: 1.8;">
+                        Located conveniently on M.C. Road, Ranjan Residency is a landmark of luxury in Vellore. We provide an exquisite environment for corporate events, and premium stays.
+                    </p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+                        <div style="border-left: 3px solid var(--brand-maroon); padding-left: 20px;">
+                            <div>
+                                <h4 style="color: var(--brand-maroon); font-size: 1.8rem; margin-bottom: 5px; font-weight: 700;">24/7</h4>
+                                <p style="color: var(--text-main); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Concierge</p>
+                            </div>
+                            <div style="margin-top: 20px;">
+                                <h4 style="color: var(--brand-maroon); font-size: 1.8rem; margin-bottom: 5px; font-weight: 700;">A/C</h4>
+                                <p style="color: var(--text-main); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Suites</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 0; width: 100%; position: relative;">
+                    <div style="position: absolute; top: -15px; left: -15px; width: 100%; height: 100%; border: 1px solid var(--brand-maroon); z-index: 1;"></div>
+                    <img src="images/site/krishna.png" style="width: 100%; position: relative; z-index: 2; box-shadow: 20px 20px 60px rgba(0,0,0,0.1); display: block;" alt="Ranjan Residency Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="section" style="background: transparent;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 15px; font-weight: 600; color: var(--brand-maroon);">Our Amenities</h2>
+                <div style="width: 80px; height: 3px; background: var(--brand-maroon); margin: 0 auto 20px;"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                <div class="luxury-card">
+                    <i class="fas fa-crown" style="font-size: 2.5rem; color: var(--brand-maroon); margin-bottom: 25px; display: block;"></i>
+                    <h3 style="font-weight: 600; color: var(--text-main);">Grand A/C Hall</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">A magnificent space for your most treasured celebrations and corporate functions.</p>
+                </div>
+                <div class="luxury-card">
+                    <i class="fas fa-bed" style="font-size: 2.8rem; color: var(--brand-maroon); margin-bottom: 30px; display: block;"></i>
+                    <h3 style="font-weight: 700; font-size: 1.6rem; margin-bottom: 20px;">Elite Suites</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8; opacity: 0.8;">Experience the finest in-room technology and comfort with our premium curated suites.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="amenities.html" style="color: var(--primary-indigo); text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; border-bottom: 2px solid var(--primary-indigo); padding-bottom: 5px; transition: all 0.3s;">Explore All Amenities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Showcase -->
+    <section class="special-showcase" style="min-height: 400px; padding: 80px 0; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/site/krishna.png'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <div style="text-align: center; background: rgba(0,0,0,0.4); padding: 50px; border-radius: 20px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1); max-width: 800px; margin: 0 20px;">
+            <h2 style="color: #fff; font-size: 3rem; margin-bottom: 20px;">Art &amp; Tradition</h2>
+            <p style="color: #fff; font-size: 1.2rem; font-family: 'Lato'; letter-spacing: 3px; text-transform: uppercase;">Preserving our rich cultural heritage</p>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="section" style="background: var(--section-bg);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 15px; font-weight: 600; color: var(--brand-maroon);">Exquisite Suites</h2>
+                <div style="width: 80px; height: 3px; background: var(--brand-maroon); margin: 0 auto 20px;"></div>
+                <p style="color: var(--text-main); font-size: 1.1rem;">Elegance in every detail</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 30px;">
+                <!-- Room 1 -->
+                <div style="background: #ffffff; border-radius: 25px; overflow: hidden; transition: all 0.4s; border: 1px solid #eeeeee; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                    <div style="height: 250px; overflow: hidden; position: relative;">
+                        <div class="swiper room-swiper-1" style="height: 100%;">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="images/site/Room1.JPG" class="glightbox">
+                                        <img src="images/site/Room1.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207061731_IMG_4872.JPG" class="glightbox">
+                                        <img src="images/site/20260207061731_IMG_4872.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207061750_IMG_4873.JPG" class="glightbox">
+                                        <img src="images/site/20260207061750_IMG_4873.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_1.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_1.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_2.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_2.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_3.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_3.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_4.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_4.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_5.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_5.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_6.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_6.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next" style="color: #fff; transform: scale(0.6);"></div>
+                            <div class="swiper-button-prev" style="color: #fff; transform: scale(0.6);"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--text-main); font-weight: 600;">Golden Suite</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem; line-height: 1.7;">Experience luxury with our premium Golden Suite, featuring a king-size bed, city view, and exclusive amenities.</p>
+                        <div style="display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;">
+                            <span style="font-size: 0.75rem; color: var(--text-main); background: #f9f9f9; padding: 5px 12px; font-weight: 600; text-transform: uppercase;"><i class="fas fa-check" style="color: var(--brand-maroon); margin-right: 5px;"></i> King Bed</span>
+                            <span style="font-size: 0.75rem; color: var(--text-main); background: #f9f9f9; padding: 5px 12px; font-weight: 600; text-transform: uppercase;"><i class="fas fa-check" style="color: var(--brand-maroon); margin-right: 5px;"></i> City View</span>
+                        </div>
+                        <a href="rooms.html" style="display: inline-block; margin-top: 10px; color: var(--primary-indigo); text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; border-bottom: 2px solid var(--primary-indigo); padding-bottom: 5px; transition: all 0.3s;">Discover Suite &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Room 2 -->
+                <div style="background: #ffffff; border-radius: 25px; overflow: hidden; transition: all 0.4s; border: 1px solid #eeeeee; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                    <div style="height: 250px; overflow: hidden; position: relative;">
+                        <div class="swiper room-swiper-2" style="height: 100%;">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="images/site/Room2.JPG" class="glightbox">
+                                        <img src="images/site/Room2.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207062202_IMG_4882.JPG" class="glightbox">
+                                        <img src="images/site/20260207062202_IMG_4882.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207062246_IMG_4884.JPG" class="glightbox">
+                                        <img src="images/site/20260207062246_IMG_4884.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_7.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_7.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_8.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_8.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_9.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_9.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_10.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_10.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_11.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_11.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_12.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_12.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next" style="color: #fff; transform: scale(0.6);"></div>
+                            <div class="swiper-button-prev" style="color: #fff; transform: scale(0.6);"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--text-main); font-weight: 600;">Deluxe Room</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem; line-height: 1.7;">Perfect for business travelers, our Deluxe Room offers comfort and convenience with a modern workspace.</p>
+                        <div style="display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;">
+                            <span style="font-size: 0.75rem; color: var(--text-main); background: #f9f9f9; padding: 5px 12px; font-weight: 600; text-transform: uppercase;"><i class="fas fa-check" style="color: var(--brand-maroon); margin-right: 5px;"></i> Queen Bed</span>
+                            <span style="font-size: 0.75rem; color: var(--text-main); background: #f9f9f9; padding: 5px 12px; font-weight: 600; text-transform: uppercase;"><i class="fas fa-check" style="color: var(--brand-maroon); margin-right: 5px;"></i> Work Desk</span>
+                        </div>
+                        <a href="rooms.html" style="display: inline-block; margin-top: 10px; color: var(--primary-indigo); text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; border-bottom: 2px solid var(--primary-indigo); padding-bottom: 5px; transition: all 0.3s;">Discover Suite &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Room 3 -->
+                <div style="background: #ffffff; border-radius: 25px; overflow: hidden; transition: all 0.4s; border: 1px solid #eeeeee; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                    <div style="height: 250px; overflow: hidden; position: relative;">
+                        <div class="swiper room-swiper-3" style="height: 100%;">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="images/site/Room3.JPG" class="glightbox">
+                                        <img src="images/site/Room3.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207061806_IMG_4874.JPG" class="glightbox">
+                                        <img src="images/site/20260207061806_IMG_4874.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207061851_IMG_4875.JPG" class="glightbox">
+                                        <img src="images/site/20260207061851_IMG_4875.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_13.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_13.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_14.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_14.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_15.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_15.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_16.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_16.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_17.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_17.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next" style="color: #fff; transform: scale(0.6);"></div>
+                            <div class="swiper-button-prev" style="color: #fff; transform: scale(0.6);"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--text-main); font-weight: 600;">Family Suite</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem; line-height: 1.7;">Spacious accommodation for the whole family, with two bedrooms and a living area.</p>
+                        <div style="display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;">
+                            <span style="font-size: 0.75rem; color: var(--text-main); background: #f9f9f9; padding: 5px 12px; font-weight: 600; text-transform: uppercase;"><i class="fas fa-check" style="color: var(--brand-maroon); margin-right: 5px;"></i> 2 Bedrooms</span>
+                            <span style="font-size: 0.75rem; color: var(--text-main); background: #f9f9f9; padding: 5px 12px; font-weight: 600; text-transform: uppercase;"><i class="fas fa-check" style="color: var(--brand-maroon); margin-right: 5px;"></i> Living Area</span>
+                        </div>
+                        <a href="rooms.html" style="display: inline-block; margin-top: 10px; color: var(--primary-indigo); text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; border-bottom: 2px solid var(--primary-indigo); padding-bottom: 5px; transition: all 0.3s;">Discover Suite &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="rooms.html" class="btn-indigo">All Accommodations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banquet Hall / Mini Hall Section -->
+    <section id="banquet" class="section" style="background: #fdfdfd; border-top: 1px solid #eee; overflow-x: hidden;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 15px; font-weight: 600; color: var(--brand-maroon);">Exclusive Banquet Hall</h2>
+                <div style="width: 80px; height: 3px; background: var(--brand-maroon); margin: 0 auto 20px;"></div>
+                <p style="color: var(--text-main); font-size: 1.1rem;">Perfect venue for Mini Events &amp; Celebrations</p>
+            </div>
+
+            <div class="mobile-column" style="display: flex; flex-wrap: wrap; gap: 50px; align-items: center;">
+                <div style="flex: 1; min-width: 0; width: 100%;">
+                    <div style="border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 1px solid #eee;">
+                        <div class="swiper banquet-swiper" style="height: auto; width: 100%; max-width: 100%; overflow: hidden;">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="images/site/ban-hall1.jpg" style="width:100%; height:300px; object-fit:cover; display: block;" class="banquet-img" alt="Banquet Hall"></div>
+                            </div>
+                            <div class="swiper-button-next" style="color: #fff;"></div>
+                            <div class="swiper-button-prev" style="color: #fff;"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 0; width: 100%;">
+                    <h3 style="font-size: 2.2rem; margin-bottom: 25px; color: var(--text-main);">Grand Celebrations, <br>Mini Hall Convenience</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 30px;">
+                        Our fully air-conditioned Mini Hall is designed for intimate gatherings, birthday parties, and corporate meetings. Experience premium hospitality in a cozy yet grand setting.
+                    </p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 35px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-users" style="color: var(--brand-maroon);"></i>
+                            <span style="font-weight: 600;">100+ Capacity</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-snowflake" style="color: var(--brand-maroon);"></i>
+                            <span style="font-weight: 600;">Central A/C</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-utensils" style="color: var(--brand-maroon);"></i>
+                            <span style="font-weight: 600;">Catering Support</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-parking" style="color: var(--brand-maroon);"></i>
+                            <span style="font-weight: 600;">Ample Parking</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn-maroon" style="padding: 15px 45px; border-radius: 0;">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ganesha Section -->
+    <section id="ganesha" class="section" style="background: rgba(15, 23, 42, 0.2); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="mobile-column" style="display: flex; flex-wrap: wrap; align-items: center; gap: 60px; flex-direction: row-reverse;">
+                <div style="flex: 1; min-width: 0; width: 100%;">
+                    <h2 style="font-size: 2.8rem; margin-bottom: 20px; font-weight: 600; color: var(--brand-maroon);">Spiritual Serenity</h2>
+                    <div style="width: 60px; height: 3px; background: var(--brand-maroon); margin-bottom: 30px;"></div>
+                    <p style="color: var(--text-main); font-size: 1.1rem; line-height: 1.8;">Our residency features a beautiful Ganesha shrine, bringing a sense of peace and divine blessings to all our guests and celebrations.</p>
+                </div>
+                <div style="flex: 1; min-width: 0; width: 100%; position: relative;">
+                    <div style="position: absolute; top: -15px; left: -15px; width: 100%; height: 100%; border: 1px solid var(--brand-maroon); z-index: 1;"></div>
+                    <img src="images/site/ganasha.jpg" style="width: 100%; object-fit: cover; box-shadow: 0 20px 50px rgba(0,0,0,0.1); position: relative; z-index: 2; display: block;" alt="Ganesha Shrine">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="section bg-secondary">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 15px; color: var(--brand-maroon);">Visit <span style="color: var(--text-main);">Us</span></h2>
+                <div style="width: 60px; height: 3px; background: var(--brand-maroon); margin: 0 auto;"></div>
+                <p style="color: var(--text-muted); margin-top: 20px;">Prime location on M.C. Road, Poigai, Vellore</p>
+            </div>
+            
+            <div class="mobile-column" style="display: flex; gap: 0; background: #ffffff; border-radius: 25px; overflow: hidden; border: 1px solid #eeeeee; box-shadow: 0 40px 80px rgba(0,0,0,0.1);">
+                <div style="flex: 2; height: 450px;" class="mobile-h-auto">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15555.276495393043!2d79.0118!3d12.9165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad3923fc7b4699%3A0xe9c394d2c8843940!2sPoigai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1625678901234!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; min-height: 300px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <div style="flex: 1; padding: 60px; background: #ffffff; display: flex; flex-direction: column; justify-content: center; border: 1px solid #eeeeee;" class="mobile-px-20 mobile-pt-40">
+                    <h4 style="margin-bottom: 15px; font-size: 2rem; color: var(--brand-maroon); font-weight: 600;" class="mobile-text-center">Ranjan Residency</h4>
+                    <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 35px; line-height: 1.8;" class="mobile-text-center">No. 963, M.C. Road, Poigai,<br>Vellore - 632 114, Tamil Nadu<br><span style="font-size: 0.9rem; color: var(--text-muted);"><a href="mailto:ranjanresidency25@gmail.com" style="color: inherit; text-decoration: none;">ranjanresidency25@gmail.com</a></span></p>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <a href="https://maps.google.com" target="_blank" class="btn-maroon" style="text-align: center; border-radius: 0;">GET DIRECTIONS</a>
+                        <div style="text-align: center; margin-top: 10px;">
+                            <p style="font-weight: 700; color: var(--brand-maroon); margin-bottom: 5px; font-size: 0.85rem; text-transform: uppercase;">Contact Support:</p>
+                            <a href="tel:04162272145" style="color: var(--text-main); text-decoration: none; font-weight: 600; display: block;">Office: 0416-2272145</a>
+                            <a href="tel:+919791890145" style="color: var(--text-main); text-decoration: none; font-weight: 600; display: block;">Booking: 97918 90145</a>
+                            <a href="tel:+919786590145" style="color: var(--text-main); text-decoration: none; font-weight: 600; display: block;">Contact: 97865 90145</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Highlights Section (Replaced) -->
+    <section id="latest-updates" class="section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 15px; font-weight: 600; color: var(--brand-maroon);">Gallery Highlights</h2>
+                <div style="width: 80px; height: 3px; background: var(--brand-maroon); margin: 15px auto;"></div>
+                <p style="color: var(--text-main);">Glimpses of our curated boutique premises</p>
+            </div>
+
+            <div id="highlightsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 30px;">
+                <!-- Populated dynamically via MediaDB -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Reviews Section -->
+    <section id="reviews" class="section" style="background: transparent;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 15px; font-weight: 600; color: var(--brand-maroon);">Guest Experiences</h2>
+                <div style="width: 80px; height: 3px; background: var(--brand-maroon); margin: 0 auto 20px;"></div>
+                <p style="color: var(--text-main); font-size: 1.1rem;">Warm words from our cherished visitors</p>
+            </div>
+
+            <div id="reviewsGrid" style="grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); display: grid; gap: 30px;">
+                <!-- Populated dynamically via ReviewsDB -->
+            </div>
+            
+            <div style="margin-top: 80px; background: #ffffff; padding: 40px 20px; border: 1px solid #eeeeee; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h3 style="font-size: 2.5rem; color: var(--brand-maroon); margin-bottom: 15px; font-weight: 600;">Share Your Experience</h3>
+                    <p style="color: var(--text-main); font-size: 1.1rem;">Your feedback helps us provide even better hospitality</p>
+                </div>
+
+                <div id="reviewSuccessAlert" style="display: none; background: rgba(46, 204, 113, 0.1); border: 1px solid #2ecc71; color: #2ecc71; padding: 15px 25px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+                    <i class="fas fa-check-circle" style="margin-right: 10px;"></i> Thank you for your review! It has been published.
+                </div>
+
+                <form id="reviewSubmitForm">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                        <div>
+                            <label style="color: var(--text-main); display: block; margin-bottom: 10px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Full Name</label>
+                            <input type="text" id="reviewName" required style="width: 100%; border: 1px solid #ddd; padding: 15px; color: var(--text-main); outline: none; background: #fff;">
+                        </div>
+                        <div>
+                            <label style="color: var(--text-main); display: block; margin-bottom: 10px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Rating</label>
+                            <select id="reviewRating" required style="width: 100%; border: 1px solid #ddd; padding: 15px; color: var(--text-main); outline: none; background: #fff;">
+                                <option value="5">⭐⭐⭐⭐⭐ (Exquisite)</option>
+                                <option value="4">⭐⭐⭐⭐ (Good)</option>
+                                <option value="3">⭐⭐⭐ (Average)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <label style="color: var(--text-main); display: block; margin-bottom: 10px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Your Narrative</label>
+                        <textarea id="reviewComment" required rows="4" style="width: 100%; border: 1px solid #ddd; padding: 15px; color: var(--text-main); outline: none; resize: none; background: #fff;"></textarea>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn-maroon" style="padding: 15px 80px; width: auto; border-radius: 0; cursor: pointer;">PUBLISH REVIEW</button>
+                        <p style="margin-top: 25px; color: var(--text-muted); font-size: 0.85rem;">Or leave a review on <a href="https://search.google.com/local/writereview?placeid=ChIJZ4UyVL4_rTsRsuW5_qyLizA" target="_blank" style="color: var(--brand-maroon); text-decoration: none; font-weight: 700;">Google Maps</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">Ranjan Residency</h3>
+                    <p style="color: #fff; margin-bottom: 15px;">Experience the perfect blend of luxury and comfort. Our residency offers well-appointed rooms and top-tier hospitality in the heart of Vellore.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-phone-alt text-gold"></i> 0416-2272145 (Office)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97918 90145 (Booking)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97865 90145 (Contact)</p>
+                    <p><i class="fas fa-envelope text-gold"></i> <a href="mailto:ranjanresidency25@gmail.com" style="color: inherit; text-decoration: none;">ranjanresidency25@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt text-gold"></i> No. 963, M.C. Road, Poigai</p>
+                    <p>Vellore - 632 114</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="rooms.html" style="color: #fff; text-decoration: none;">Luxury Rooms</a></li>
+                        <li><a href="amenities.html" style="color: #fff; text-decoration: none;">Amenities</a></li>
+                        <li><a href="gallery.html" style="color: #fff; text-decoration: none;">Photo Gallery</a></li>
+                        <li><a href="contact.html" style="color: #fff; text-decoration: none;">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear">2026</span> Ranjan Residency. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Call Button -->
+    <a href="tel:+919786590145" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #D4AF37, #FDB931);
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 1001;
+        text-decoration: none;
+    " class="md-hidden">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script src="js/reviews-data.js"></script>
+    <script src="js/media-data.js"></script>
+    <script>
+        // Render Latest Media Highlights
+        function renderHighlights() {
+            const container = document.getElementById('highlightsGrid');
+            if (!container || typeof MediaDB === 'undefined') return;
+
+            const mediaItems = MediaDB.getLatest(6);
+            if (mediaItems.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px; background: #f9f9f9; border: 1px dashed #ddd;">
+                        <i class="fas fa-images" style="font-size: 3rem; color: #ddd; margin-bottom: 20px; display: block;"></i>
+                        <p style="color: var(--text-muted);">No recent highlights to show at the moment.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = mediaItems.map(media => {
+                if (media.type === 'video') {
+                    return `
+                        <div class="luxury-card" style="padding: 0; overflow: hidden; position: relative; height: 350px;">
+                            <div style="height: 280px; overflow: hidden; position: relative;">
+                                <a href="${media.url}" class="glightbox">
+                                    <video style="width: 100%; height: 280px; object-fit: cover;">
+                                        <source src="${media.url}" type="video/mp4">
+                                    </video>
+                                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2);">
+                                        <i class="fas fa-play-circle" style="font-size: 3.5rem; color: #fff; opacity: 0.9;"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div style="padding: 15px 20px;">
+                                <h4 style="color: var(--brand-maroon); margin: 0; font-size: 1.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600;">${media.title}</h4>
+                                <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 5px;">${MediaDB.formatTimeAgo(media.created_at)}</p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div class="luxury-card" style="padding: 0; overflow: hidden; position: relative; height: 350px;">
+                            <div style="height: 280px; overflow: hidden; position: relative;">
+                                <a href="${media.url}" class="glightbox">
+                                    <img src="${media.url}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" alt="${media.title}">
+                                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); opacity: 0; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+                                        <i class="fas fa-search-plus" style="font-size: 2.5rem; color: #fff;"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div style="padding: 15px 20px;">
+                                <h4 style="color: var(--brand-maroon); margin: 0; font-size: 1.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600;">${media.title}</h4>
+                                <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 5px;">${MediaDB.formatTimeAgo(media.created_at)}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            }).join('');
+
+            if (typeof GLightbox !== 'undefined') {
+                GLightbox({
+                    touchNavigation: true,
+                    loop: true,
+                    autoplayVideos: true
+                });
+            }
+        }
+
+        // Render Guest Reviews
+        function renderReviews() {
+            const container = document.getElementById('reviewsGrid');
+            if (!container || typeof ReviewsDB === 'undefined') return;
+
+            const reviews = ReviewsDB.getLatest(3);
+            container.innerHTML = reviews.map(review => {
+                let stars = '';
+                for (let i = 0; i < 5; i++) {
+                    const color = i < review.rating ? 'var(--brand-maroon)' : '#dddddd';
+                    stars += `<i class="fas fa-star" style="color: ${color}; font-size: 0.85rem;"></i> `;
+                }
+
+                const initial = review.name ? review.name.trim().charAt(0).toUpperCase() : 'G';
+                return `
+                    <div class="luxury-card" style="padding: 50px 40px; border-left: 5px solid var(--brand-maroon);">
+                        <i class="fas fa-quote-left" style="font-size: 2rem; color: #f0f0f0; margin-bottom: 20px; display: block;"></i>
+                        <div style="margin-bottom: 20px;">
+                            ${stars}
+                        </div>
+                        <p style="color: var(--text-main); font-style: italic; font-size: 1rem; line-height: 1.8; margin-bottom: 30px;">"${review.comment}"</p>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 50px; height: 50px; background: var(--brand-maroon); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold; font-size: 1.2rem;">
+                                ${initial}
+                            </div>
+                            <div>
+                                <h4 style="color: var(--text-main); margin: 0;">${review.name}</h4>
+                                <small style="color: #666;">${ReviewsDB.formatTimeAgo(review.created_at)}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderHighlights();
+            renderReviews();
+
+            // Handle Review Form Submission
+            const reviewForm = document.getElementById('reviewSubmitForm');
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = document.getElementById('reviewName').value.trim();
+                    const rating = document.getElementById('reviewRating').value;
+                    const comment = document.getElementById('reviewComment').value.trim();
+
+                    if (!name || !comment) {
+                        alert('Please fill out all fields.');
+                        return;
+                    }
+
+                    ReviewsDB.add({ name, rating, comment });
+
+                    // Show success message
+                    const successAlert = document.getElementById('reviewSuccessAlert');
+                    if (successAlert) {
+                        successAlert.style.display = 'block';
+                        setTimeout(() => {
+                            successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 100);
+                        setTimeout(() => {
+                            successAlert.style.display = 'none';
+                        }, 5000);
+                    }
+
+                    reviewForm.reset();
+                    renderReviews();
+                });
+            }
+
+            // Initialize Swipers
+            [1, 2, 3].forEach(function(id, idx) {
+                new Swiper('.room-swiper-' + id, {
+                    loop: true,
+                    autoplay: {
+                        delay: 3000 + (idx * 1000),
+                        disableOnInteraction: false,
+                    },
+                    pagination: { el: '.room-swiper-' + id + ' .swiper-pagination', clickable: true },
+                    navigation: { 
+                        nextEl: '.room-swiper-' + id + ' .swiper-button-next', 
+                        prevEl: '.room-swiper-' + id + ' .swiper-button-prev' 
+                    },
+                    touchReleaseOnEdges: true,
+                    resistanceRatio: 0,
+                    watchSlidesProgress: true,
+                });
+            });
+
+            new Swiper('.banquet-swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: { el: '.banquet-swiper .swiper-pagination', clickable: true },
+                navigation: { 
+                    nextEl: '.banquet-swiper .swiper-button-next', 
+                    prevEl: '.banquet-swiper .swiper-button-prev' 
+                },
+                touchReleaseOnEdges: true,
+                watchSlidesProgress: true,
+            });
+        });
+    </script>
+</body>
+</html>

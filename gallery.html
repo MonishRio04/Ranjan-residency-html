@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Photo Gallery - Ranjan Residency | Vellore</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+        .overlay:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">RANJAN RESIDENCY</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="rooms.html" class="nav-link">Rooms</a>
+                <a href="vellore-sites.html" class="nav-link">Vellore Sites</a>
+                <a href="amenities.html" class="nav-link">Amenities</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tel:+919786590145" class="btn-maroon-sm md-hidden-header"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="section mobile-pt-40" style="padding-top: 150px; background: #ffffff;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 70px;" class="mobile-mt-30">
+                <h1 style="font-size: 3rem; margin-bottom: 15px; color: var(--brand-maroon); font-weight: 600;">Prestige Gallery</h1>
+                <div style="width: 80px; height: 3px; background: var(--brand-maroon); margin: 0 auto;"></div>
+                <p style="color: var(--text-main); margin-top: 20px;">Capturing the essence of luxury and celebration at Ranjan Residency</p>
+            </div>
+            
+            <div id="gallery-masonry" style="columns: 3 300px; column-gap: 20px; overflow: hidden;">
+                <!-- Static Gallery Images -->
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/home.jpeg" class="glightbox">
+                        <img src="images/site/home.jpeg" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/krishna.png" class="glightbox">
+                        <img src="images/site/krishna.png" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/ban-hall1.jpg" class="glightbox">
+                        <img src="images/site/ban-hall1.jpg" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/ganasha.jpg" class="glightbox">
+                        <img src="images/site/ganasha.jpg" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/Room1.JPG" class="glightbox">
+                        <img src="images/site/Room1.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/Room2.JPG" class="glightbox">
+                        <img src="images/site/Room2.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/Room3.JPG" class="glightbox">
+                        <img src="images/site/Room3.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207060716_IMG_4853.JPG" class="glightbox">
+                        <img src="images/site/20260207060716_IMG_4853.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207060813_IMG_4856.JPG" class="glightbox">
+                        <img src="images/site/20260207060813_IMG_4856.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207061009_IMG_4861.JPG" class="glightbox">
+                        <img src="images/site/20260207061009_IMG_4861.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207061026_IMG_4862.JPG" class="glightbox">
+                        <img src="images/site/20260207061026_IMG_4862.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207061356_IMG_4865.JPG" class="glightbox">
+                        <img src="images/site/20260207061356_IMG_4865.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207061731_IMG_4872.JPG" class="glightbox">
+                        <img src="images/site/20260207061731_IMG_4872.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207061750_IMG_4873.JPG" class="glightbox">
+                        <img src="images/site/20260207061750_IMG_4873.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207061806_IMG_4874.JPG" class="glightbox">
+                        <img src="images/site/20260207061806_IMG_4874.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207061851_IMG_4875.JPG" class="glightbox">
+                        <img src="images/site/20260207061851_IMG_4875.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207062202_IMG_4882.JPG" class="glightbox">
+                        <img src="images/site/20260207062202_IMG_4882.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207062246_IMG_4884.JPG" class="glightbox">
+                        <img src="images/site/20260207062246_IMG_4884.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207063237_IMG_4904.JPG" class="glightbox">
+                        <img src="images/site/20260207063237_IMG_4904.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207063831_IMG_4919.JPG" class="glightbox">
+                        <img src="images/site/20260207063831_IMG_4919.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207064236_IMG_4926.JPG" class="glightbox">
+                        <img src="images/site/20260207064236_IMG_4926.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207065348_IMG_4948.JPG" class="glightbox">
+                        <img src="images/site/20260207065348_IMG_4948.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/20260207071033_IMG_4981.JPG" class="glightbox">
+                        <img src="images/site/20260207071033_IMG_4981.JPG" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;" class="gallery-item-wrapper">
+                    <a href="images/site/anandhas.webp" class="glightbox">
+                        <img src="images/site/anandhas.webp" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="Gallery Image">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">Ranjan Residency</h3>
+                    <p style="color: #fff; margin-bottom: 15px;">Experience the perfect blend of luxury and comfort. Our residency offers well-appointed rooms and top-tier hospitality in the heart of Vellore.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-phone-alt text-gold"></i> 0416-2272145 (Office)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97918 90145 (Booking)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97865 90145 (Contact)</p>
+                    <p><i class="fas fa-envelope text-gold"></i> <a href="mailto:ranjanresidency25@gmail.com" style="color: inherit; text-decoration: none;">ranjanresidency25@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt text-gold"></i> No. 963, M.C. Road, Poigai</p>
+                    <p>Vellore - 632 114</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="rooms.html" style="color: #fff; text-decoration: none;">Luxury Rooms</a></li>
+                        <li><a href="amenities.html" style="color: #fff; text-decoration: none;">Amenities</a></li>
+                        <li><a href="gallery.html" style="color: #fff; text-decoration: none;">Photo Gallery</a></li>
+                        <li><a href="contact.html" style="color: #fff; text-decoration: none;">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear">2026</span> Ranjan Residency. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Call Button -->
+    <a href="tel:+919786590145" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #D4AF37, #FDB931);
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 1001;
+        text-decoration: none;
+    " class="md-hidden">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script src="js/media-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Append any dynamically uploaded media items
+            if (typeof MediaDB !== 'undefined') {
+                const masonry = document.getElementById('gallery-masonry');
+                const uploadedMedia = MediaDB.getImagesOnly();
+                
+                // Add any custom uploaded items that aren't already hardcoded
+                uploadedMedia.forEach(function(item) {
+                    if (!item.url.includes('images/site/')) {
+                        const wrapper = document.createElement('div');
+                        wrapper.style = "margin-bottom: 20px; position: relative; overflow: hidden; break-inside: avoid; border: 1px solid #eeeeee;";
+                        wrapper.className = "gallery-item-wrapper";
+                        wrapper.innerHTML = `
+                            <a href="${item.url}" class="glightbox">
+                                <img src="${item.url}" style="width: 100%; display: block; transition: all 0.5s ease;" class="gallery-img" alt="${item.title}">
+                                <div class="overlay">
+                                    <i class="fas fa-search-plus" style="font-size: 2rem; color: var(--brand-maroon);"></i>
+                                </div>
+                            </a>
+                        `;
+                        masonry.prepend(wrapper);
+                    }
+                });
+
+                // Refresh GLightbox
+                if (typeof GLightbox !== 'undefined') {
+                    GLightbox({
+                        touchNavigation: true,
+                        loop: true,
+                        autoplayVideos: true
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

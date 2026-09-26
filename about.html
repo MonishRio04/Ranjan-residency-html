@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ranjan Residency | Luxury & Comfort in Vellore</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .luxury-card {
+            transition: all 0.3s ease;
+            border: 1px solid #eeeeee;
+        }
+        .luxury-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">RANJAN RESIDENCY</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="rooms.html" class="nav-link">Rooms</a>
+                <a href="vellore-sites.html" class="nav-link">Vellore Sites</a>
+                <a href="amenities.html" class="nav-link">Amenities</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tel:+919786590145" class="btn-maroon-sm md-hidden-header"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="section" style="padding-top: 150px; background: #ffffff;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <h1 style="font-size: 3rem; margin-bottom: 15px; color: var(--brand-maroon); font-weight: 600;">Discover Our Story</h1>
+                <div style="width: 80px; height: 3px; background: var(--brand-maroon); margin: 0 auto;"></div>
+            </div>
+            
+            <div class="mobile-column" style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
+                <div style="flex: 1; min-width: 320px; position: relative;">
+                    <img src="images/site/krishna.png" style="width: 100%; border-radius: 0; box-shadow: 0 15px 40px rgba(0,0,0,0.1);" alt="Ranjan Residency Exterior">
+                </div>
+                <div style="flex: 1.2; min-width: 280px;">
+                    <h2 style="margin-bottom: 25px; font-size: 2.5rem; color: var(--brand-maroon); font-weight: 600;">Heritage & <span style="color: var(--text-main);">Hospitality</span></h2>
+                    <p style="color: var(--text-main); margin-bottom: 25px; font-size: 1.1rem; line-height: 1.8; font-weight: 600; font-style: italic;">
+                        "Your search for an excellent stay ends here with all star categories."
+                    </p>
+                    <p style="color: var(--text-main); margin-bottom: 25px; font-size: 1.1rem; line-height: 1.8;">
+                        Ranjan Residency is more than just a place to stay; it's a landmark of luxury and comfort in Poigai, Vellore. Strategically located on M.C. Road, we provide a sophisticated environment for both premium accommodation and special occasions.
+                    </p>
+                    <p style="color: var(--text-main); margin-bottom: 25px; font-size: 1.1rem; line-height: 1.8;">
+                        Experience the ultimate comfort with our well-appointed rooms, featuring <strong>unlimited high-speed Wi-Fi</strong> and <strong>complementary breakfast (Veg)</strong> for all room guests. Whether you are here for a medical visit, a spiritual journey to the Golden Temple, or a business trip, our residency offers the perfect blend of modern facilities and traditional hospitality.
+                    </p>
+
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+                        <div style="background: #fdf2f2; border: 1px solid var(--brand-maroon); padding: 10px 20px; color: var(--brand-maroon); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">
+                            <i class="fas fa-wifi" style="margin-right: 8px;"></i> Unlimited Wi-Fi
+                        </div>
+                        <div style="background: #fdf2f2; border: 1px solid var(--brand-maroon); padding: 10px 20px; color: var(--brand-maroon); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">
+                            <i class="fas fa-utensils" style="margin-right: 8px;"></i> Veg Breakfast Included
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px;">
+                        <div class="luxury-card" style="padding: 35px; border-left: 5px solid var(--brand-maroon); border-radius: 0; background: #f9f9f9;">
+                            <h4 style="color: var(--brand-maroon); margin-bottom: 15px; font-size: 1.4rem; font-weight: 600;">Our Vision</h4>
+                            <p style="font-size: 1rem; color: var(--text-main); line-height: 1.7;">To be the premier destination for grand celebrations and comfortable stays in Vellore, recognized for our excellence and commitment to guest satisfaction.</p>
+                        </div>
+                        <div class="luxury-card" style="padding: 35px; border-left: 5px solid var(--brand-maroon); border-radius: 0; background: #f9f9f9;">
+                            <h4 style="color: var(--brand-maroon); margin-bottom: 15px; font-size: 1.4rem; font-weight: 600;">Our Mission</h4>
+                            <p style="font-size: 1rem; color: var(--text-main); line-height: 1.7;">Delivering exceptional service and luxury with a touch of heritage hospitality to make every stay and event truly memorable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">Ranjan Residency</h3>
+                    <p style="color: #fff; margin-bottom: 15px;">Experience the perfect blend of luxury and comfort. Our residency offers well-appointed rooms and top-tier hospitality in the heart of Vellore.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-phone-alt text-gold"></i> 0416-2272145 (Office)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97918 90145 (Booking)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97865 90145 (Contact)</p>
+                    <p><i class="fas fa-envelope text-gold"></i> <a href="mailto:ranjanresidency25@gmail.com" style="color: inherit; text-decoration: none;">ranjanresidency25@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt text-gold"></i> No. 963, M.C. Road, Poigai</p>
+                    <p>Vellore - 632 114</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="rooms.html" style="color: #fff; text-decoration: none;">Luxury Rooms</a></li>
+                        <li><a href="amenities.html" style="color: #fff; text-decoration: none;">Amenities</a></li>
+                        <li><a href="gallery.html" style="color: #fff; text-decoration: none;">Photo Gallery</a></li>
+                        <li><a href="contact.html" style="color: #fff; text-decoration: none;">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear">2026</span> Ranjan Residency. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Call Button -->
+    <a href="tel:+919786590145" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #D4AF37, #FDB931);
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 1001;
+        text-decoration: none;
+    " class="md-hidden">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

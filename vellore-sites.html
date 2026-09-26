@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vellore Sites & Proximity - Ranjan Residency</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .connection-wrapper {
+            position: relative;
+            padding: 100px 0;
+            overflow: visible;
+        }
+
+        @media (max-width: 1100px) {
+            .connection-wrapper { display: none; }
+        }
+
+        .connection-container {
+            position: relative;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .central-node {
+            position: relative;
+            z-index: 100;
+            width: 200px;
+            height: 200px;
+            background: var(--brand-maroon);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: 0 0 50px rgba(193, 40, 47, 0.3);
+            text-align: center;
+            border: 5px solid #fff;
+        }
+
+        .node-content i { font-size: 3rem; display: block; margin-bottom: 10px; color: #fff; }
+        .node-content span { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; color: #fff; }
+
+        .pulse-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--brand-maroon);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.8); opacity: 0; }
+        }
+
+        .destination-node {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(var(--angle));
+            pointer-events: none;
+        }
+
+        .connection-line {
+            position: absolute;
+            width: 300px;
+            height: 2px;
+            background: linear-gradient(to right, var(--brand-maroon), #eeeeee);
+            left: calc(50% + 50px);
+            transform-origin: left;
+            animation: lineGrow 1s ease-out forwards;
+            animation-delay: var(--delay);
+            opacity: 0;
+        }
+
+        @keyframes lineGrow {
+            0% { width: 0; opacity: 0; }
+            100% { width: 300px; opacity: 0.6; }
+        }
+
+        .destination-content {
+            position: absolute;
+            left: calc(50% + 350px);
+            transform: rotate(calc(-1 * var(--angle)));
+            background: #ffffff;
+            padding: 15px 20px;
+            border: 1px solid #f0f0f0;
+            width: 240px;
+            pointer-events: all;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            animation: fadeIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation-delay: calc(var(--delay) + 0.3s);
+            opacity: 0;
+            border-radius: 8px;
+        }
+
+        .destination-content:hover {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: rotate(calc(-1 * var(--angle))) translateY(-10px) scale(1.05);
+            border-color: var(--brand-maroon);
+            z-index: 10;
+        }
+
+        .dist-tag {
+            position: absolute;
+            top: -12px;
+            right: 15px;
+            background: var(--brand-maroon);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 3px 12px;
+            font-weight: 800;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(193, 40, 47, 0.2);
+        }
+
+        .destination-content h4 {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-main);
+            white-space: wrap;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .destination-content small {
+            color: var(--brand-maroon);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: rotate(calc(-1 * var(--angle))) translateX(-40px); }
+            to { opacity: 1; transform: rotate(calc(-1 * var(--angle))) translateX(0); }
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            border-color: rgba(193, 40, 47, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">RANJAN RESIDENCY</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="rooms.html" class="nav-link">Rooms</a>
+                <a href="vellore-sites.html" class="nav-link active">Vellore Sites</a>
+                <a href="amenities.html" class="nav-link">Amenities</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tel:+919786590145" class="btn-maroon-sm md-hidden-header"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vellore Sites Section -->
+    <section class="section mobile-pt-40" style="padding-top: 150px; background: #ffffff; min-height: 100vh;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 70px;" class="mobile-mt-30">
+                <h1 style="font-size: 3rem; margin-bottom: 15px; color: var(--brand-maroon); font-weight: 600;">Vellore Sites</h1>
+                <div style="width: 80px; height: 3px; background: var(--brand-maroon); margin: 0 auto;"></div>
+                <p style="color: var(--text-main); margin-top: 20px; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Ranjan Residency is strategically located in the heart of Vellore, providing easy access to major landmarks, hospitals, and spiritual centers. Explore the proximity of key locations from our residency.
+                </p>
+            </div>
+
+            <!-- Connection Diagram (Desktop only) -->
+            <div class="connection-wrapper">
+                <div class="connection-container">
+                    <div class="central-node">
+                        <div class="node-content">
+                            <i class="fas fa-hotel"></i>
+                            <span>Ranjan Residency</span>
+                            <small style="display: block; font-size: 0.6rem; margin-top: 5px; opacity: 0.8;">MAIN POINT</small>
+                        </div>
+                        <div class="pulse-ring"></div>
+                    </div>
+
+                    <!-- 1. CMC Hospital Vellore -->
+                    <div class="destination-node" style="--angle: 0deg; --delay: 0.1s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">9 km</div>
+                            <h4 title="CMC Hospital Vellore">CMC Hospital Vellore</h4>
+                            <small>Medical Care</small>
+                        </div>
+                    </div>
+
+                    <!-- 2. Naruvi Hospitals -->
+                    <div class="destination-node" style="--angle: 30.77deg; --delay: 0.2s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">9 km</div>
+                            <h4 title="Naruvi Hospitals">Naruvi Hospitals</h4>
+                            <small>Medical Care</small>
+                        </div>
+                    </div>
+
+                    <!-- 3. Narayani Research Hospital -->
+                    <div class="destination-node" style="--angle: 61.54deg; --delay: 0.3s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">10 km</div>
+                            <h4 title="Narayani Research Hospital">Narayani Research Hospital</h4>
+                            <small>Medical Care</small>
+                        </div>
+                    </div>
+
+                    <!-- 4. Sripuram Golden Temple -->
+                    <div class="destination-node" style="--angle: 92.31deg; --delay: 0.4s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">10 km</div>
+                            <h4 title="Sripuram Golden Temple">Sripuram Golden Temple</h4>
+                            <small>Nearby Attractions</small>
+                        </div>
+                    </div>
+
+                    <!-- 5. Vellore Fort & Jalakandeswarar Temple -->
+                    <div class="destination-node" style="--angle: 123.08deg; --delay: 0.5s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">9 km</div>
+                            <h4 title="Vellore Fort & Jalakandeswarar Temple">Vellore Fort & Jalakandeswarar Temple</h4>
+                            <small>Nearby Attractions</small>
+                        </div>
+                    </div>
+
+                    <!-- 6. Virinchipuram Margabandeeswarar Temple -->
+                    <div class="destination-node" style="--angle: 153.85deg; --delay: 0.6s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">4 km</div>
+                            <h4 title="Virinchipuram Margabandeeswarar Temple">Virinchipuram Margabandeeswarar Temple</h4>
+                            <small>Nearby Attractions</small>
+                        </div>
+                    </div>
+
+                    <!-- 7. Vasala Ishkan Temple -->
+                    <div class="destination-node" style="--angle: 184.62deg; --delay: 0.7s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">11 km</div>
+                            <h4 title="Vasala Ishkan Temple">Vasala Ishkan Temple</h4>
+                            <small>Nearby Attractions</small>
+                        </div>
+                    </div>
+
+                    <!-- 8. Varadaraja Perumal Temple -->
+                    <div class="destination-node" style="--angle: 215.38deg; --delay: 0.8s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">5 km</div>
+                            <h4 title="Varadaraja Perumal Temple">Varadaraja Perumal Temple</h4>
+                            <small>Nearby Attractions</small>
+                        </div>
+                    </div>
+
+                    <!-- 9. Katpadi Railway Junction -->
+                    <div class="destination-node" style="--angle: 246.15deg; --delay: 0.9s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">13 km</div>
+                            <h4 title="Katpadi Railway Junction">Katpadi Railway Junction</h4>
+                            <small>Connectivity & Transport</small>
+                        </div>
+                    </div>
+
+                    <!-- 10. VIT University -->
+                    <div class="destination-node" style="--angle: 276.92deg; --delay: 1.0s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">15 km</div>
+                            <h4 title="VIT University">VIT University</h4>
+                            <small>Connectivity & Transport</small>
+                        </div>
+                    </div>
+
+                    <!-- 11. Tidel Park (IT) -->
+                    <div class="destination-node" style="--angle: 307.69deg; --delay: 1.1s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">4 km</div>
+                            <h4 title="Tidel Park (IT)">Tidel Park (IT)</h4>
+                            <small>Connectivity & Transport</small>
+                        </div>
+                    </div>
+
+                    <!-- 12. Vellore Airport (Nearest) -->
+                    <div class="destination-node" style="--angle: 338.46deg; --delay: 1.2s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">4 km</div>
+                            <h4 title="Vellore Airport (Nearest)">Vellore Airport (Nearest)</h4>
+                            <small>Connectivity & Transport</small>
+                        </div>
+                    </div>
+
+                    <!-- 13. Anandhas Hotel -->
+                    <div class="destination-node" style="--angle: 369.23deg; --delay: 1.3s;">
+                        <div class="connection-line"></div>
+                        <div class="destination-content">
+                            <div class="dist-tag">Nearby</div>
+                            <h4 title="Anandhas Hotel">Anandhas Hotel</h4>
+                            <small>Connectivity & Transport</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- List View (Mobile & Backup) -->
+            <div style="margin-top: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 30px;">
+                <!-- Medical Care -->
+                <div class="category-card" style="background: #ffffff; padding: 40px; border: 1px solid #eee; transition: all 0.3s;">
+                    <h3 style="color: var(--brand-maroon); margin-bottom: 30px; font-size: 1.6rem; display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-hospital" style="font-size: 1.2rem; opacity: 0.3;"></i>
+                        Medical Care
+                    </h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">CMC Hospital Vellore</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">World-renowned medical institution providing advanced healthcare services.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">9 km</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Naruvi Hospitals</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">State-of-the-art multi-speciality hospital offering world-class medical care.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">9 km</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Narayani Research Hospital</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">Advanced research-based healthcare facility.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">10 km</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Nearby Attractions -->
+                <div class="category-card" style="background: #ffffff; padding: 40px; border: 1px solid #eee; transition: all 0.3s;">
+                    <h3 style="color: var(--brand-maroon); margin-bottom: 30px; font-size: 1.6rem; display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-fort-awesome" style="font-size: 1.2rem; opacity: 0.3;"></i>
+                        Nearby Attractions
+                    </h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Sripuram Golden Temple</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">Famous spiritual destination covered in pure gold.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">10 km</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Vellore Fort &amp; Jalakandeswarar Temple</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">Historic 16th-century fort with a beautiful ancient temple.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">9 km</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Virinchipuram Margabandeeswarar Temple</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">Ancient Shiva temple known for Dravidian architecture.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">4 km</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Vasala Ishkan Temple</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">Peaceful spiritual center dedicated to Lord Krishna.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">11 km</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Varadaraja Perumal Temple</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">Famous temple dedicated to Lord Vishnu.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">5 km</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Connectivity & Transport -->
+                <div class="category-card" style="background: #ffffff; padding: 40px; border: 1px solid #eee; transition: all 0.3s;">
+                    <h3 style="color: var(--brand-maroon); margin-bottom: 30px; font-size: 1.6rem; display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-train" style="font-size: 1.2rem; opacity: 0.3;"></i>
+                        Connectivity &amp; Transport
+                    </h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Katpadi Railway Junction</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">Major railway junction connecting key cities.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">13 km</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">VIT University</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">One of India's top private universities.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">15 km</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Tidel Park (IT)</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">IT park housing multiple technology companies.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">4 km</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Vellore Airport (Nearest)</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">Nearest airport providing domestic connectivity.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">4 km</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 25px; border-bottom: 1px solid #f5f5f5; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px;">
+                            <div style="flex: 1;">
+                                <span style="display: block; font-weight: 700; color: var(--text-main); line-height: 1.3; font-size: 1rem;">Anandhas Hotel</span>
+                                <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; display: block;">Popular vegetarian restaurant in Vellore.</small>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="background: #fdf2f2; color: var(--brand-maroon); padding: 5px 12px; font-size: 0.8rem; font-weight: 800; white-space: nowrap; border-radius: 4px; border: 1px solid rgba(193, 40, 47, 0.1);">Nearby</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 80px;">
+                <a href="index.html" class="btn-maroon" style="padding: 15px 45px; border-radius: 0;">BACK TO HOME</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">Ranjan Residency</h3>
+                    <p style="color: #fff; margin-bottom: 15px;">Experience the perfect blend of luxury and comfort. Our residency offers well-appointed rooms and top-tier hospitality in the heart of Vellore.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-phone-alt text-gold"></i> 0416-2272145 (Office)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97918 90145 (Booking)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97865 90145 (Contact)</p>
+                    <p><i class="fas fa-envelope text-gold"></i> <a href="mailto:ranjanresidency25@gmail.com" style="color: inherit; text-decoration: none;">ranjanresidency25@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt text-gold"></i> No. 963, M.C. Road, Poigai</p>
+                    <p>Vellore - 632 114</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="rooms.html" style="color: #fff; text-decoration: none;">Luxury Rooms</a></li>
+                        <li><a href="amenities.html" style="color: #fff; text-decoration: none;">Amenities</a></li>
+                        <li><a href="gallery.html" style="color: #fff; text-decoration: none;">Photo Gallery</a></li>
+                        <li><a href="contact.html" style="color: #fff; text-decoration: none;">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear">2026</span> Ranjan Residency. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Call Button -->
+    <a href="tel:+919786590145" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #D4AF37, #FDB931);
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 1001;
+        text-decoration: none;
+    " class="md-hidden">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

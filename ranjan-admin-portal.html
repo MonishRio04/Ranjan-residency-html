@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Media Portal - Ranjan Residency</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: var(--secondary-dark);">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">RANJAN RESIDENCY</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="rooms.html" class="nav-link">Rooms</a>
+                <a href="vellore-sites.html" class="nav-link">Vellore Sites</a>
+                <a href="amenities.html" class="nav-link">Amenities</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tel:+919786590145" class="btn-maroon-sm md-hidden-header"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Section -->
+    <section class="section" style="padding-top: 120px; background: var(--secondary-dark); min-height: 100vh;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.2rem; color: #fff;">Admin Media</h2>
+                <div style="width: 80px; height: 3px; background: var(--primary-gold); margin: 15px auto;"></div>
+                <p style="color: #bbb;">Manage your website content</p>
+            </div>
+
+            <div id="alertMessage" style="display: none; background: rgba(40, 167, 69, 0.2); color: #28a745; padding: 15px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #28a745; text-align: center;">
+            </div>
+
+            <!-- Upload Form -->
+            <div style="max-width: 600px; margin: 0 auto 40px; background: #111; padding: 25px; border-radius: 12px; border: 1px dashed var(--primary-gold);">
+                <h3 style="margin-bottom: 20px; color: var(--primary-gold); font-size: 1.3rem;">Upload New Media</h3>
+                <form id="mediaUploadForm">
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 10px; color: #aaa;">Select Image or Video</label>
+                        <input type="file" id="mediaFile" accept="image/*,video/*" required style="width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; border-radius: 5px;">
+                        <small style="color: #666;">Supports JPG, PNG, WEBP, MP4 (Stored in browser storage)</small>
+                    </div>
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 10px; color: #aaa;">Title / Description</label>
+                        <input type="text" id="mediaTitle" placeholder="e.g. Wedding Event Highlights" style="width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; border-radius: 5px;">
+                    </div>
+                    <button type="submit" class="btn-gold" style="width: 100%;">Upload to Website</button>
+                </form>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #333; margin-bottom: 60px;">
+
+            <!-- Management List -->
+            <h3 style="margin-bottom: 30px; font-size: 2rem; text-align: center; color: #fff;">Currently Active Media</h3>
+            <div id="mediaGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Populated dynamically via JS -->
+            </div>
+            <p id="emptyMediaNotice" style="display: none; text-align: center; color: #666; font-style: italic;">No uploaded media yet. Start by uploading above.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">Ranjan Residency</h3>
+                    <p style="color: #fff; margin-bottom: 15px;">Experience the perfect blend of luxury and comfort. Our residency offers well-appointed rooms and top-tier hospitality in the heart of Vellore.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-phone-alt text-gold"></i> 0416-2272145 (Office)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97918 90145 (Booking)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97865 90145 (Contact)</p>
+                    <p><i class="fas fa-envelope text-gold"></i> <a href="mailto:ranjanresidency25@gmail.com" style="color: inherit; text-decoration: none;">ranjanresidency25@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt text-gold"></i> No. 963, M.C. Road, Poigai</p>
+                    <p>Vellore - 632 114</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="rooms.html" style="color: #fff; text-decoration: none;">Luxury Rooms</a></li>
+                        <li><a href="amenities.html" style="color: #fff; text-decoration: none;">Amenities</a></li>
+                        <li><a href="gallery.html" style="color: #fff; text-decoration: none;">Photo Gallery</a></li>
+                        <li><a href="contact.html" style="color: #fff; text-decoration: none;">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear">2026</span> Ranjan Residency. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Call Button -->
+    <a href="tel:+919786590145" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #D4AF37, #FDB931);
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 1001;
+        text-decoration: none;
+    " class="md-hidden">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script src="js/media-data.js"></script>
+    <script>
+        function showAlert(msg) {
+            const alertBox = document.getElementById('alertMessage');
+            alertBox.textContent = msg;
+            alertBox.style.display = 'block';
+            setTimeout(() => {
+                alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+            setTimeout(() => {
+                alertBox.style.display = 'none';
+            }, 5000);
+        }
+
+        function renderMediaList() {
+            const grid = document.getElementById('mediaGrid');
+            const emptyNotice = document.getElementById('emptyMediaNotice');
+            const mediaList = MediaDB.getAll();
+
+            grid.innerHTML = '';
+            if (mediaList.length === 0) {
+                emptyNotice.style.display = 'block';
+                return;
+            }
+            emptyNotice.style.display = 'none';
+
+            mediaList.forEach(function(media) {
+                const card = document.createElement('div');
+                card.style = "background: #111; border-radius: 12px; overflow: hidden; border: 1px solid #333; transition: all 0.3s;";
+                
+                const mediaPreview = media.type === 'video' 
+                    ? `<video width="100%" height="200" controls style="object-fit: cover; background: #000;">
+                           <source src="${media.url}" type="video/mp4">
+                       </video>`
+                    : `<div style="height: 200px; overflow: hidden;">
+                           <img src="${media.url}" style="width: 100%; height: 100%; object-fit: cover;" alt="${media.title}">
+                       </div>`;
+
+                card.innerHTML = `
+                    ${mediaPreview}
+                    <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h4 style="margin: 0; color: #fff;">${media.title}</h4>
+                            <small style="color: #666; text-transform: uppercase;">${media.type}</small>
+                        </div>
+                        <button type="button" onclick="deleteMedia(${media.id})" style="background: #ff4d4d; border: none; color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function deleteMedia(id) {
+            if (confirm('Are you sure you want to delete this?')) {
+                MediaDB.delete(id);
+                showAlert('Media deleted successfully!');
+                renderMediaList();
+            }
+        }
+
+        document.getElementById('mediaUploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('mediaFile');
+            const titleInput = document.getElementById('mediaTitle');
+
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert('Please select a file to upload.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const isVideo = file.type.includes('video');
+            const reader = new FileReader();
+
+            reader.onload = function(evt) {
+                const dataUrl = evt.target.result;
+                MediaDB.add({
+                    title: titleInput.value.trim() || file.name,
+                    type: isVideo ? 'video' : 'image',
+                    url: dataUrl,
+                    filename: file.name
+                });
+
+                fileInput.value = '';
+                titleInput.value = '';
+                showAlert('Media uploaded successfully!');
+                renderMediaList();
+            };
+
+            reader.readAsDataURL(file);
+        });
+
+        document.addEventListener('DOMContentLoaded', renderMediaList);
+    </script>
+</body>
+</html>

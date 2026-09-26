@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exquisite Suites & Rooms - Ranjan Residency | Vellore</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .luxury-room-card {
+            background: #ffffff;
+            border: 1px solid #eeeeee;
+            transition: all 0.4s ease;
+        }
+        .luxury-room-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .image-wrapper {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .luxury-room-card:hover .image-wrapper img { transform: scale(1.1); }
+
+        .content-wrapper { padding: 35px; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+        .feature-item {
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+        .feature-item i { color: var(--brand-maroon); margin-right: 8px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">RANJAN RESIDENCY</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="rooms.html" class="nav-link active">Rooms</a>
+                <a href="vellore-sites.html" class="nav-link">Vellore Sites</a>
+                <a href="amenities.html" class="nav-link">Amenities</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tel:+919786590145" class="btn-maroon-sm md-hidden-header"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Rooms Section -->
+    <section class="section mobile-pt-40" style="padding-top: 150px; background: #ffffff;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 70px;" class="mobile-mt-30">
+                <h1 style="font-size: 3rem; margin-bottom: 15px; color: var(--brand-maroon); font-weight: 600;">Exquisite Suites</h1>
+                <div style="width: 80px; height: 3px; background: var(--brand-maroon); margin: 0 auto;"></div>
+                <p style="color: var(--text-main); margin-top: 20px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">Elegantly appointed rooms designed for maximum comfort and relaxation during your stay at Ranjan Residency.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 30px;">
+                <!-- Room 1 -->
+                <div class="luxury-room-card" style="border-radius: 25px; overflow: hidden; border: 1px solid #eeeeee;">
+                    <div class="image-wrapper" style="height: 350px;">
+                        <div class="swiper room-swiper-1" style="height: 100%;">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="images/site/Room1.JPG" class="glightbox">
+                                        <img src="images/site/Room1.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207061731_IMG_4872.JPG" class="glightbox">
+                                        <img src="images/site/20260207061731_IMG_4872.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207061750_IMG_4873.JPG" class="glightbox">
+                                        <img src="images/site/20260207061750_IMG_4873.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_1.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_1.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_2.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_2.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_3.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_3.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_4.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_4.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_5.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_5.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_6.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_6.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Golden Suite">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next" style="color: #fff; transform: scale(0.7);"></div>
+                            <div class="swiper-button-prev" style="color: #fff; transform: scale(0.7);"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="content-wrapper">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                            <h3 style="font-size: 1.8rem; color: var(--text-main); font-weight: 600;">Golden Suite</h3>
+                        </div>
+                        <p style="color: var(--text-muted); margin-bottom: 25px; line-height: 1.7;">Experience luxury with our premium Golden Suite, featuring a king-size bed, city view, and exclusive amenities.</p>
+                        
+                        <div class="features-grid">
+                            <div class="feature-item"><i class="fas fa-check"></i> King Bed</div>
+                            <div class="feature-item"><i class="fas fa-check"></i> City View</div>
+                            <div class="feature-item"><i class="fas fa-check"></i> Free Wi-Fi</div>
+                            <div class="feature-item"><i class="fas fa-check"></i> Free Veg Breakfast</div>
+                        </div>
+                        
+                        <a href="tel:+919791890145" class="btn-maroon" style="width: 100%; text-align: center; border-radius: 0;">RESERVE THIS SUITE</a>
+                    </div>
+                </div>
+
+                <!-- Room 2 -->
+                <div class="luxury-room-card" style="border-radius: 25px; overflow: hidden; border: 1px solid #eeeeee;">
+                    <div class="image-wrapper" style="height: 350px;">
+                        <div class="swiper room-swiper-2" style="height: 100%;">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="images/site/Room2.JPG" class="glightbox">
+                                        <img src="images/site/Room2.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207062202_IMG_4882.JPG" class="glightbox">
+                                        <img src="images/site/20260207062202_IMG_4882.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207062246_IMG_4884.JPG" class="glightbox">
+                                        <img src="images/site/20260207062246_IMG_4884.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_7.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_7.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_8.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_8.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_9.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_9.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_10.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_10.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_11.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_11.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_12.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_12.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Deluxe Room">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next" style="color: #fff; transform: scale(0.7);"></div>
+                            <div class="swiper-button-prev" style="color: #fff; transform: scale(0.7);"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="content-wrapper">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                            <h3 style="font-size: 1.8rem; color: var(--text-main); font-weight: 600;">Deluxe Room</h3>
+                        </div>
+                        <p style="color: var(--text-muted); margin-bottom: 25px; line-height: 1.7;">Perfect for business travelers, our Deluxe Room offers comfort and convenience with a modern workspace.</p>
+                        
+                        <div class="features-grid">
+                            <div class="feature-item"><i class="fas fa-check"></i> Queen Bed</div>
+                            <div class="feature-item"><i class="fas fa-check"></i> Work Desk</div>
+                            <div class="feature-item"><i class="fas fa-check"></i> Wi-Fi</div>
+                            <div class="feature-item"><i class="fas fa-check"></i> Free Veg Breakfast</div>
+                        </div>
+                        
+                        <a href="tel:+919791890145" class="btn-maroon" style="width: 100%; text-align: center; border-radius: 0;">RESERVE THIS SUITE</a>
+                    </div>
+                </div>
+
+                <!-- Room 3 -->
+                <div class="luxury-room-card" style="border-radius: 25px; overflow: hidden; border: 1px solid #eeeeee;">
+                    <div class="image-wrapper" style="height: 350px;">
+                        <div class="swiper room-swiper-3" style="height: 100%;">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="images/site/Room3.JPG" class="glightbox">
+                                        <img src="images/site/Room3.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207061806_IMG_4874.JPG" class="glightbox">
+                                        <img src="images/site/20260207061806_IMG_4874.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/20260207061851_IMG_4875.JPG" class="glightbox">
+                                        <img src="images/site/20260207061851_IMG_4875.JPG" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_13.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_13.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_14.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_14.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_15.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_15.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_16.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_16.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="images/site/room-images/room_new_17.jpeg" class="glightbox">
+                                        <img src="images/site/room-images/room_new_17.jpeg" style="width: 100%; height: 100%; object-fit: cover;" alt="Family Suite">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next" style="color: #fff; transform: scale(0.7);"></div>
+                            <div class="swiper-button-prev" style="color: #fff; transform: scale(0.7);"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="content-wrapper">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                            <h3 style="font-size: 1.8rem; color: var(--text-main); font-weight: 600;">Family Suite</h3>
+                        </div>
+                        <p style="color: var(--text-muted); margin-bottom: 25px; line-height: 1.7;">Spacious accommodation for the whole family, with two bedrooms and a living area.</p>
+                        
+                        <div class="features-grid">
+                            <div class="feature-item"><i class="fas fa-check"></i> 2 Bedrooms</div>
+                            <div class="feature-item"><i class="fas fa-check"></i> Living Area</div>
+                            <div class="feature-item"><i class="fas fa-check"></i> Kitchenette</div>
+                            <div class="feature-item"><i class="fas fa-check"></i> Free Veg Breakfast</div>
+                        </div>
+                        
+                        <a href="tel:+919791890145" class="btn-maroon" style="width: 100%; text-align: center; border-radius: 0;">RESERVE THIS SUITE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">Ranjan Residency</h3>
+                    <p style="color: #fff; margin-bottom: 15px;">Experience the perfect blend of luxury and comfort. Our residency offers well-appointed rooms and top-tier hospitality in the heart of Vellore.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-phone-alt text-gold"></i> 0416-2272145 (Office)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97918 90145 (Booking)</p>
+                    <p><i class="fas fa-mobile-alt text-gold"></i> 97865 90145 (Contact)</p>
+                    <p><i class="fas fa-envelope text-gold"></i> <a href="mailto:ranjanresidency25@gmail.com" style="color: inherit; text-decoration: none;">ranjanresidency25@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt text-gold"></i> No. 963, M.C. Road, Poigai</p>
+                    <p>Vellore - 632 114</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="rooms.html" style="color: #fff; text-decoration: none;">Luxury Rooms</a></li>
+                        <li><a href="amenities.html" style="color: #fff; text-decoration: none;">Amenities</a></li>
+                        <li><a href="gallery.html" style="color: #fff; text-decoration: none;">Photo Gallery</a></li>
+                        <li><a href="contact.html" style="color: #fff; text-decoration: none;">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear">2026</span> Ranjan Residency. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Call Button -->
+    <a href="tel:+919786590145" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #D4AF37, #FDB931);
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 1001;
+        text-decoration: none;
+    " class="md-hidden">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            [1, 2, 3].forEach(function(id, idx) {
+                new Swiper('.room-swiper-' + id, {
+                    loop: true,
+                    autoplay: {
+                        delay: 3500 + (idx * 500),
+                        disableOnInteraction: false,
+                    },
+                    pagination: { el: '.room-swiper-' + id + ' .swiper-pagination', clickable: true },
+                    navigation: { 
+                        nextEl: '.room-swiper-' + id + ' .swiper-button-next', 
+                        prevEl: '.room-swiper-' + id + ' .swiper-button-prev' 
+                    },
+                    touchReleaseOnEdges: true,
+                    watchSlidesProgress: true,
+                });
+            });
+        });
+    </script>
+</body>
+</html>
